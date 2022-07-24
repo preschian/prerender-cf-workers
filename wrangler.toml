@@ -1,0 +1,16 @@
+name = "prerender-workers"
+main = "src/index.ts"
+routes = [
+  "kodadot.preschian.xyz/rmrk/collection/*",
+  "kodadot.preschian.xyz/rmrk/gallery/*",
+  "kodadot.preschian.xyz/rmrk/detail/*",
+  "kodadot.preschian.xyz/bsx/collection/*",
+  "kodadot.preschian.xyz/bsx/gallery/*",
+  "kodadot.preschian.xyz/bsx/detail/*",
+  "kodadot.preschian.xyz/moonsama/collection/*",
+  "kodadot.preschian.xyz/moonsama/gallery/*",
+  "kodadot.preschian.xyz/moonsama/detail/*",
+]
+
+[vars]
+ZONE_ID = ""
