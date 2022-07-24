@@ -1,5 +1,6 @@
 name = "prerender-workers"
 main = "src/index.ts"
+compatibility_date = "2022-06-24"
 routes = [
   "kodadot.preschian.xyz/rmrk/collection/*",
   "kodadot.preschian.xyz/rmrk/gallery/*",
