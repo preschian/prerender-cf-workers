@@ -1,5 +1,6 @@
 // source: https://github.com/prerender/prerender-cloudflare-worker
-const API_KEY = "";
+declare const PRERENDER_API_KEY: string;
+
 const PRERENDERED_DOMAINS = ["https://kodadot.preschian.xyz"];
 const BOT_AGENTS = [
   "googlebot",
@@ -104,7 +105,7 @@ function prerenderRequest(request: Request): Promise<Response> {
   const prerenderUrl = `https://service.prerender.io/${url}`;
   const headersToSend = new Headers(headers);
 
-  headersToSend.set("X-Prerender-Token", API_KEY);
+  headersToSend.set("X-Prerender-Token", PRERENDER_API_KEY);
 
   const prerenderRequest = new Request(prerenderUrl, {
     headers: headersToSend,
