@@ -35,6 +35,7 @@ export const BOT_AGENTS = [
   "xing-contenttabreceiver",
   "chrome-lighthouse",
   "telegrambot",
+  "got", // https://github.com/sindresorhus/got from https://www.opengraph.xyz/
 ];
 
 export const IGNORE_EXTENSIONS = [
