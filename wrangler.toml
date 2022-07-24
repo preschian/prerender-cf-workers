@@ -12,6 +12,3 @@ routes = [
   "kodadot.preschian.xyz/moonsama/gallery/*",
   "kodadot.preschian.xyz/moonsama/detail/*",
 ]
-
-[vars]
-ZONE_ID = ""
