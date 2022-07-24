@@ -1,6 +1,4 @@
 // source: https://github.com/prerender/prerender-cloudflare-worker
-declare const PRERENDER_API_KEY: string;
-
 const PRERENDERED_DOMAINS = ["https://kodadot.preschian.xyz"];
 const BOT_AGENTS = [
   "googlebot",
@@ -100,12 +98,12 @@ function containsOneOfThem(array: string[], element: string): boolean {
 /**
  * Function to request the prerendered version of a request.
  */
-function prerenderRequest(request: Request): Promise<Response> {
+function prerenderRequest(request: Request, key: string): Promise<Response> {
   const { url, headers } = request;
   const prerenderUrl = `https://service.prerender.io/${url}`;
   const headersToSend = new Headers(headers);
 
-  headersToSend.set("X-Prerender-Token", PRERENDER_API_KEY);
+  headersToSend.set("X-Prerender-Token", key);
 
   const prerenderRequest = new Request(prerenderUrl, {
     headers: headersToSend,
@@ -115,12 +113,16 @@ function prerenderRequest(request: Request): Promise<Response> {
   return fetch(prerenderRequest);
 }
 
+export interface Env {
+  PRERENDER_API_KEY: string;
+}
+
 /**
  * This attaches the event listener that gets invoked when CloudFlare receives
  * a request.
  */
 export default {
-  async fetch(request: Request): Promise<Response> {
+  async fetch(request: Request, env: Env): Promise<Response> {
     const url = new URL(request.url);
     const { origin, pathname, search } = url;
     const requestUserAgent = (
@@ -146,7 +148,7 @@ export default {
       !isOneOfThem(IGNORE_EXTENSIONS, ext) &&
       isOneOfThem(PRERENDERED_DOMAINS, origin)
     ) {
-      return await prerenderRequest(request);
+      return await prerenderRequest(request, env.PRERENDER_API_KEY);
     }
 
     return fetch(request.url);
