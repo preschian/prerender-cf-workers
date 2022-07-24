@@ -1,0 +1,25 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    name: Deploy
+    steps:
+      - uses: actions/checkout@v3
+      - name: Publish
+        uses: cloudflare/wrangler-action@2.0.0
+        with:
+          apiKey: ${{ secrets.CF_API_KEY }}
+          email: ${{ secrets.CF_EMAIL }}
+          accountId: ${{ secrets.CF_ACCOUNT_ID }}
+          secrets: |
+            PRERENDER_API_KEY
+            CF_ZONE_ID
+        env:
+          PRERENDER_API_KEY: ${{ secrets.PRERENDER_API_KEY }}
+          CF_ZONE_ID: ${{ secrets.CF_ZONE_ID }}
