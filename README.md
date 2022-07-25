@@ -1,9 +1,3 @@
-# How to setup
-1. Clone this repo
-2. Add these Actions secrets on github `CF_ACCOUNT_ID`, `CF_API_TOKEN`, `CF_ZONE_ID`, and `PRERENDER_API_KEY`
-3. Update desired routes on `wrangler.toml`
-4. Update origin on `constant.ts`
-
 # Background
 For now, only Netlify support Prerendering. While waiting for Cloudflare Pages to support that also, this script aims to give the same result by using https://prerender.io/. Netlify is also using a forked version prerender on their end https://github.com/netlify/prerender.
 
@@ -42,3 +36,9 @@ Results:
 
 > **Note**
 > <br>This domain [kodadot.preschian.xyz](https://kodadot.preschian.xyz/) is running by using this repo https://github.com/preschian/nft-gallery/tree/main.
+
+# How to setup
+1. Clone this repo
+2. Add these Actions secrets on github `CF_ACCOUNT_ID`, `CF_API_TOKEN`, `CF_ZONE_ID`, and `PRERENDER_API_KEY`
+3. Update desired routes on `wrangler.toml`
+4. Update origin on `constant.ts`
