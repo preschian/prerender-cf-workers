@@ -1,3 +1,7 @@
+# How to setup
+1. Clone this repo
+2. Add these Actions secrets in github `CF_ACCOUNT_ID`, `CF_API_TOKEN`, `CF_ZONE_ID`, and `PRERENDER_API_KEY`
+
 # Background
 For now, only Netlify support Prerendering. While waiting for Cloudflare Pages to support that also, this script aims to give the same result by using https://prerender.io/. Netlify is also using a forked version prerender on their end https://github.com/netlify/prerender.
 
