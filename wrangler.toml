@@ -8,7 +8,10 @@ routes = [
   "kodadot.preschian.xyz/bsx/collection/*",
   "kodadot.preschian.xyz/bsx/gallery/*",
   "kodadot.preschian.xyz/bsx/detail/*",
-  "kodadot.preschian.xyz/moonsama/collection/*",
-  "kodadot.preschian.xyz/moonsama/gallery/*",
-  "kodadot.preschian.xyz/moonsama/detail/*",
+  "kodadot.preschian.xyz/snek/collection/*",
+  "kodadot.preschian.xyz/snek/gallery/*",
+  "kodadot.preschian.xyz/snek/detail/*",
+  "kodadot.preschian.xyz/glmr/collection/*",
+  "kodadot.preschian.xyz/glmr/gallery/*",
+  "kodadot.preschian.xyz/glmr/detail/*",
 ]
